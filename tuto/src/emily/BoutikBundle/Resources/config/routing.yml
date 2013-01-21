@@ -1,11 +1,17 @@
 emily_home:
-    pattern:  /
+    pattern: /
     defaults: { _controller: emilyBoutikBundle:Home:show }
+    requirements:
+        _method: GET
 
 emily_contact:
-    pattern:  /contact
+    pattern: /contact
     defaults: { _controller: emilyBoutikBundle:Contact:show }
+    requirements:
+        _method: GET|POST
 
 emily_products_all:
-    pattern:  /products
+    pattern: /products
     defaults: { _controller: emilyBoutikBundle:Products:all }
+    requirements:
+        _method: GET
