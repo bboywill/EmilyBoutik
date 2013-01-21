@@ -1,0 +1,31 @@
+{% extends '::base.html.twig' %}
+
+{% block title %}
+    Boutique d'Emilie
+{% endblock %}
+
+{% block header %}
+    <header>
+		<a href="{{ path('emily_home') }}" id="logo">
+			EmilyBoutik
+		</a>
+		<nav id="menu">
+			<ul>
+				<li><a href="{{ path('emily_products_all') }}">Produits</a></li>
+				<li><a href="{{ path('emily_contact') }}">Contact</a></li>
+			</ul>
+		</nav>
+	</header>
+{% endblock %}
+
+{% block footer %}
+    <footer>
+	</footer>
+{% endblock %}
+
+{% block body %}
+    <div id="wrapper">
+		<h1>{% block h1 %}{% endblock %}</h1>
+		{% block content %}{% endblock %}
+	</div>
+{% endblock %}

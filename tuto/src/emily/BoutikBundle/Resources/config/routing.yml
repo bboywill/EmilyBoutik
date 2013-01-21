@@ -1,0 +1,11 @@
+emily_home:
+    pattern:  /
+    defaults: { _controller: emilyBoutikBundle:Home:show }
+
+emily_contact:
+    pattern:  /contact
+    defaults: { _controller: emilyBoutikBundle:Contact:show }
+
+emily_products_all:
+    pattern:  /products
+    defaults: { _controller: emilyBoutikBundle:Products:all }
