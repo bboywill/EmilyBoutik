@@ -6,6 +6,11 @@
 
 {% block content %}
     <form action="{{ path('emily_contact') }}" method="post" {{ form_enctype(form) }} class="form form-contact">
+        {% if app.session.hasFlash("emily_contact") %}
+            <div class="blogger-notice">
+                {{ app.session.flash("emily_contact") }}
+            </div>
+        {% endif %}
         {{ form_errors(form) }}
         {{ form_row(form.name) }}
         {{ form_row(form.email) }}
