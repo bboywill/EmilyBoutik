@@ -15,3 +15,10 @@ emily_products_all:
     defaults: { _controller: emilyBoutikBundle:Products:all }
     requirements:
         _method: GET
+
+emily_category:
+    pattern:  /{id}
+    defaults: { _controller: emilyBoutikBundle:Categories:show }
+    requirements:
+        _method: GET
+        id: \d+

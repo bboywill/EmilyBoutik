@@ -1,5 +1,5 @@
 <?php
-namespace emily\BoutikBundle\Core\Model;
+namespace emily\BoutikBundle\Core\Form;
 
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Symfony\Component\Validator\Constraints\NotBlank;

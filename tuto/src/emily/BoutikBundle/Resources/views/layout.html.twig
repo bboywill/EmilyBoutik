@@ -12,6 +12,11 @@
 		<nav id="menu">
 			<ul>
 				<li><a href="{{ path('emily_products_all') }}">Produits</a></li>
+				{% for category in categories %}
+					<li>
+						<a href="{{ path('emily_category', {"id": category.id}) }}">{{ category.title }}</a>
+					</li>
+				{% endfor %}
 				<li><a href="{{ path('emily_contact') }}">Contact</a></li>
 			</ul>
 		</nav>

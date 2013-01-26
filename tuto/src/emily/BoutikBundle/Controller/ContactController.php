@@ -2,7 +2,7 @@
 namespace emily\BoutikBundle\Controller;
 
 use emily\BoutikBundle\Core\Form\ContactForm;
-use emily\BoutikBundle\Core\Model\ContactResponse;
+use emily\BoutikBundle\Core\Form\ContactResponse;
 
 class ContactController extends AbstractController {
     public function showAction() {
