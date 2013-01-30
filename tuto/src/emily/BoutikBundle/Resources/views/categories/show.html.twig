@@ -1,9 +1,18 @@
 {% extends 'emilyBoutikBundle::layout.html.twig' %}
 
 {% block h1 %}
-	{{ category.title }}
+	{{ category.name }}
 {% endblock %}
 
 {% block content %}
-    Category details
+    <h2>Liste des produits</h2>
+	<ul>
+		{% for product in category.products %}
+			<li>
+				{{ product.name }}
+			</li>
+		{% else %}
+			<li>No product</li>
+		{% endfor %}
+	</ul>
 {% endblock %}

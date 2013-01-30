@@ -1,5 +1,5 @@
 <?php
-namespace emily\BoutikBundle\Core\Form;
+namespace emily\BoutikBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;

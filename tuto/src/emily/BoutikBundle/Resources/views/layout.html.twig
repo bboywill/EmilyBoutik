@@ -11,10 +11,10 @@
 		</a>
 		<nav id="menu">
 			<ul>
-				<li><a href="{{ path('emily_products_all') }}">Produits</a></li>
+				<li><a href="{{ path('emily_products') }}">Produits</a></li>
 				{% for category in categories %}
 					<li>
-						<a href="{{ path('emily_category', {"id": category.id}) }}">{{ category.title }}</a>
+						<a href="{{ path('emily_category', {"id": category.id}) }}">{{ category.name }}</a>
 					</li>
 				{% endfor %}
 				<li><a href="{{ path('emily_contact') }}">Contact</a></li>

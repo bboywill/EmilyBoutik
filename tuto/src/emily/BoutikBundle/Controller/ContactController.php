@@ -1,8 +1,8 @@
 <?php
 namespace emily\BoutikBundle\Controller;
 
-use emily\BoutikBundle\Core\Form\ContactForm;
-use emily\BoutikBundle\Core\Form\ContactResponse;
+use emily\BoutikBundle\Form\ContactForm;
+use emily\BoutikBundle\Form\ContactResponse;
 
 class ContactController extends AbstractController {
     public function showAction() {

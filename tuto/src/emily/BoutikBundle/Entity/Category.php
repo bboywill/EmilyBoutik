@@ -2,12 +2,17 @@
 namespace emily\BoutikBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\Common\Collections\ArrayCollection;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="categories")
  */
 class Category {
+    public function __construct() {
+        $this->products = new ArrayCollection();
+    }
+
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -18,13 +23,16 @@ class Category {
     /**
      * @ORM\Column(type="string")
      */
-    protected $title;
+    protected $name;
 
     /**
-     * @ORM\Column(type="string", length=20)
+     * @ORM\Column(type="string")
      */
     protected $image;
 
+    /**
+     * @ORM\OneToMany(targetEntity="Product", mappedBy="category")
+     */
     protected $products;
 
     /**
@@ -42,8 +50,8 @@ class Category {
      * @param string $title
      * @return Category
      */
-    public function setTitle($title) {
-        $this->title = $title;
+    public function setName($name) {
+        $this->name = $name;
         return $this;
     }
 
@@ -52,8 +60,8 @@ class Category {
      *
      * @return string 
      */
-    public function getTitle() {
-        return $this->title;
+    public function getName() {
+        return $this->name;
     }
 
     /**
@@ -74,5 +82,38 @@ class Category {
      */
     public function getImage() {
         return $this->image;
+    }
+
+    /**
+     * Add products
+     *
+     * @param \emily\BoutikBundle\Entity\Product $products
+     * @return Category
+     */
+    public function addProduct(\emily\BoutikBundle\Entity\Product $products)
+    {
+        $this->products[] = $products;
+    
+        return $this;
+    }
+
+    /**
+     * Remove products
+     *
+     * @param \emily\BoutikBundle\Entity\Product $products
+     */
+    public function removeProduct(\emily\BoutikBundle\Entity\Product $products)
+    {
+        $this->products->removeElement($products);
+    }
+
+    /**
+     * Get products
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getProducts()
+    {
+        return $this->products;
     }
 }
