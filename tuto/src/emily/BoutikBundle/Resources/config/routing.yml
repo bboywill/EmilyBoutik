@@ -10,13 +10,31 @@ emily_contact:
     requirements:
         _method: GET|POST
 
-emily_products:
+emily_products_all:
     pattern: /products
     defaults: { _controller: emilyBoutikBundle:Products:all }
     requirements:
         _method: GET
 
-emily_category:
+emily_products_add:
+    pattern: /products/add
+    defaults: { _controller: emilyBoutikBundle:Products:add }
+    requirements:
+        _method: GET|POST
+
+emily_categories_all:
+    pattern: /categories
+    defaults: { _controller: emilyBoutikBundle:Categories:all }
+    requirements:
+        _method: GET
+
+emily_categories_add:
+    pattern:  /categories/add
+    defaults: { _controller: emilyBoutikBundle:Categories:add }
+    requirements:
+        _method: GET|POST
+
+emily_categories_show:
     pattern:  /{id}
     defaults: { _controller: emilyBoutikBundle:Categories:show }
     requirements:

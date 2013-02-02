@@ -3,12 +3,18 @@ namespace emily\BoutikBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 use Doctrine\Common\Collections\ArrayCollection;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="categories")
  */
 class Category {
+	public static function loadValidatorMetadata(ClassMetadata $metadata) {
+        $metadata->addPropertyConstraint("name", new NotBlank());
+    }
+
     public function __construct() {
         $this->products = new ArrayCollection();
     }
@@ -115,5 +121,9 @@ class Category {
     public function getProducts()
     {
         return $this->products;
+    }
+
+    public function __toString() {
+        return $this->getName();
     }
 }

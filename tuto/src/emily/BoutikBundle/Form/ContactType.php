@@ -4,7 +4,7 @@ namespace emily\BoutikBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 
-class ContactForm extends AbstractType {
+class ContactType extends AbstractType {
     public function buildForm(FormBuilderInterface $builder, array $options) {
         $builder->add("name");
         $builder->add("email", "email");
@@ -13,6 +13,6 @@ class ContactForm extends AbstractType {
     }
 
     public function getName() {
-        return "emilyBoutikBundleCoreForm_contact";
+        return "emily_boutikbundle_contacttype";
     }
 }

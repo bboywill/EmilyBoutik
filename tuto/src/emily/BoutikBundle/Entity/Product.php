@@ -2,12 +2,18 @@
 namespace emily\BoutikBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Validator\Mapping\ClassMetadata;
+use Symfony\Component\Validator\Constraints\NotBlank;
 
 /**
  * @ORM\Entity
  * @ORM\Table(name="products")
  */
 class Product {
+	public static function loadValidatorMetadata(ClassMetadata $metadata) {
+        $metadata->addPropertyConstraint("name", new NotBlank());
+    }
+
     /**
      * @ORM\Id
      * @ORM\Column(type="integer")
@@ -108,5 +114,9 @@ class Product {
     public function getCategory()
     {
         return $this->category;
+    }
+
+    public function __toString() {
+        return $this->getName();
     }
 }

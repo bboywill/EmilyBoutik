@@ -1,13 +1,13 @@
 <?php
 namespace emily\BoutikBundle\Controller;
 
-use emily\BoutikBundle\Form\ContactForm;
-use emily\BoutikBundle\Form\ContactResponse;
+use emily\BoutikBundle\Form\ContactType;
+use emily\BoutikBundle\Entity\Contact;
 
 class ContactController extends AbstractController {
     public function showAction() {
-        $formResponse = new ContactResponse();
-		$form = $this->createForm(new ContactForm(), $formResponse);
+        $formResponse = new Contact();
+		$form = $this->createForm(new ContactType(), $formResponse);
         $request = $this->getRequest();
         if($request->getMethod() == "POST") {
             $form->bindRequest($request);

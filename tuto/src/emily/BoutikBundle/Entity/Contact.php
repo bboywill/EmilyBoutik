@@ -1,5 +1,5 @@
 <?php
-namespace emily\BoutikBundle\Form;
+namespace emily\BoutikBundle\Entity;
 
 use Symfony\Component\Validator\Mapping\ClassMetadata;
 use Symfony\Component\Validator\Constraints\NotBlank;
@@ -7,7 +7,7 @@ use Symfony\Component\Validator\Constraints\Email;
 use Symfony\Component\Validator\Constraints\MinLength;
 use Symfony\Component\Validator\Constraints\MaxLength;
 
-class ContactResponse {
+class Contact {
     protected $name;
     protected $email;
     protected $subject;
